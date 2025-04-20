@@ -12,7 +12,13 @@ export const useArt = create((set) => ({
 
   fetchArts: async () => {
     try {
-      const res = await fetch("http://localhost:5001/artist/api/art");
+      const res = await fetch("http://localhost:5001/artist/api/art", {
+        method: "GET", 
+        headers: {
+          "Content-Type": "application/json", 
+        }, 
+        credentials: "include",
+      });
 
       if (!res.ok) {
         throw new Error('Failed to fetch arts');
