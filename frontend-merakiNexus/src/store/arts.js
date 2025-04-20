@@ -126,7 +126,15 @@ export const useArt = create((set) => ({
   },
   fetchHostGallery: async () => {
 
-    const res = await fetch("http://localhost:5001/host/api");
+    const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/host/api", {
+      method: "GET", 
+      headers: {
+        "Content-Type": "application/json", 
+      }, 
+      credentials: "include",
+    });
+
+
     if (!res.ok) {
       throw new Error('Failed to fetch arts');
     }
