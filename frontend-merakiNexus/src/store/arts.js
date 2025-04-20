@@ -16,7 +16,8 @@ export const useArt = create((set) => ({
       // Use environment variable for dynamic API URL
       const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5001";  // Fallback to local URL if the environment variable is not set
 
-      const res = await fetch(`${apiUrl}/artist/api/art`, {
+      //https://cse499-merakinexus-ai-and-defi.onrender.com
+      const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/artist/api/art", {
         method: "GET", 
         headers: {
           "Content-Type": "application/json", 
@@ -40,7 +41,7 @@ export const useArt = create((set) => ({
       }
   },
   deleteArt: async (pid) => {
-    const res = await fetch(`http://localhost:5001/artist/api/art/${pid}`, {
+    const res = await fetch(`https://cse499-merakinexus-ai-and-defi.onrender.com/artist/api/art/${pid}`, {
         method: "DELETE",
     });
     const data = await res.json();
@@ -94,7 +95,7 @@ export const useArt = create((set) => ({
   },
   fetchArtist: async () => {
     try {
-      const res = await fetch("http://localhost:5001/artist/api/art/artistInfo");
+      const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/artist/api/art/artistInfo");
 
       if (!res.ok) {
         throw new Error("Failed to fetch Artist info");
