@@ -16,7 +16,7 @@ export const useArt = create((set) => ({
       // Use environment variable for dynamic API URL
       const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5001";  // Fallback to local URL if the environment variable is not set
 
-      const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/artist/api/art", {
+      const res = await fetch(`${apiUrl}/artist/api/art`, {
         method: "GET", 
         headers: {
           "Content-Type": "application/json", 
