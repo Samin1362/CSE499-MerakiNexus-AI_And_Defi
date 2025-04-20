@@ -76,7 +76,13 @@ export const useArt = create((set) => ({
   }, 
   fetchInfo: async () => {
     try {
-      const res = await fetch("http://localhost:5001/dao/api/info");
+      const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/dao/api/info", {
+        method: "GET", 
+        headers: {
+          "Content-Type": "application/json", 
+        }, 
+        credentials: "include",
+      });
 
       if (!res.ok) {
         throw new Error("Failed to fetch DAO info");
@@ -95,7 +101,13 @@ export const useArt = create((set) => ({
   },
   fetchArtist: async () => {
     try {
-      const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/artist/api/art/artistInfo");
+      const res = await fetch("https://cse499-merakinexus-ai-and-defi.onrender.com/artist/api/art/artistInfo", {
+        method: "GET", 
+        headers: {
+          "Content-Type": "application/json", 
+        }, 
+        credentials: "include",
+      });
 
       if (!res.ok) {
         throw new Error("Failed to fetch Artist info");
